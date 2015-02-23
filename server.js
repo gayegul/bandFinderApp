@@ -2,7 +2,7 @@
 
 var express = require('express');
 var mongoose = require('mongoose');
-var userRoutes = require('./router');
+var userRoutes = require('./lib/router');
 
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/band_finder_users');
