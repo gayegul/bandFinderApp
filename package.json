@@ -38,6 +38,10 @@
     "mongoose": "^3.8.23",
     "package.json": "0.0.0",
     "passport": "^0.2.1",
-    "passport-http": "^0.2.2"
+    "passport-http": "^0.2.2",
+    "pg": "^4.3.0",
+    "pg-hstore": "^2.3.1",
+    "sequelize": "^2.0.3",
+    "sqlite3": "^3.0.5"
   }
 }
