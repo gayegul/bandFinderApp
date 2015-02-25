@@ -7,7 +7,7 @@ var passport = require('passport');
 var app = express();
 app.set('appSecret', process.env.SECRET || 'changethis!');
 app.use(passport.initialize());
-require('./lib/passport')(passport);
+require('./lib/passport')(passport, db);
 
 var userRouter = express.Router();
 
