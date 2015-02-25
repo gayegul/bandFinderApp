@@ -4,7 +4,6 @@ var express = require('express');
 var db = require('./lib/db');
 var passport = require('passport');
 
-
 var app = express();
 app.set('appSecret', process.env.SECRET || 'changethis!');
 app.use(passport.initialize());
