@@ -56,7 +56,7 @@ describe('app testing', function() {
 	it('should sign in with the token', function(done) {
 		chai.request(server)
 		.get('/api/sign_in')
-		.auth('abc@x.com', 'test')
+		.auth('test', 'test')
 		.set('eat', token)
 		.end(function(err, res) {
 			expect(err).to.eql(null);
@@ -159,6 +159,19 @@ describe('app testing', function() {
 		});
 	});
 
+	it('should list all approvals', function(done) {
+		chai.request(server)
+		.get('/api/approval')
+		.send({"username":"test1", "firstname":"test1", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding"})
+		.set('eat', token1)
+		.end(function(err, res) {
+			expect(err).to.eql(null);
+			expect(res).to.have.status(200);
+			expect(res.body).to.include({"username":"test2", "firstname":"test", "lastname":"last", "email":"abc@x.com", "location":"ny", "instruments":"example", "bio":"coding"});
+			done();
+		});
+	});
+
 	it('should offer an unseen user', function(done) {
 		chai.request(server)
 		.get('/api/unseen_user')
@@ -166,11 +179,10 @@ describe('app testing', function() {
 		.end(function(err, res) {
 			expect(err).to.eql(null);
 			expect(res).to.have.status(200);
-			expect(res.body).to.include({"username": "test3"});
+			expect(res.body).to.include({"username":"test3", "firstname":"test", "lastname":"last", "email":"abc@x.com", "location":"ny", "instruments":"example", "bio":"coding"});
 			done();
 		});
 	});
-
 });
 
 
