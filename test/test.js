@@ -42,7 +42,7 @@ describe('app testing', function() {
 	it('should create user and create token', function(done) {
 		chai.request(server)
 		.post('/api/user')
-		.send({"username":"test", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding"})
+		.send({"username":"test", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"})
 		.end(function(err, res) {
 			expect(err).to.eql(null);
 			expect(res).to.have.status(200);
@@ -81,7 +81,7 @@ describe('app testing', function() {
 	it('should create test user #1', function(done) {
 		chai.request(server)
 		.post('/api/user')
-		.send({"username":"test1", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding"})
+		.send({"username":"test1", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"})
 		.end(function(err, res) {
 			expect(err).to.eql(null);
 			expect(res).to.have.status(200);
@@ -95,7 +95,7 @@ describe('app testing', function() {
 	it('should create test user #2', function(done) {
 		chai.request(server)
 		.post('/api/user')
-		.send({"username":"test2", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding"})
+		.send({"username":"test2", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"})
 		.end(function(err, res) {
 			expect(err).to.eql(null);
 			expect(res).to.have.status(200);
@@ -109,7 +109,7 @@ describe('app testing', function() {
 	it('should create test user #3', function(done) {
 		chai.request(server)
 		.post('/api/user')
-		.send({"username":"test3", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding"})
+		.send({"username":"test3", "firstname":"test", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"})
 		.end(function(err, res) {
 			expect(err).to.eql(null);
 			expect(res).to.have.status(200);
@@ -162,12 +162,12 @@ describe('app testing', function() {
 	it('should list all approvals', function(done) {
 		chai.request(server)
 		.get('/api/approval')
-		.send({"username":"test1", "firstname":"test1", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding"})
+		.send({"username":"test1", "firstname":"test1", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"})
 		.set('eat', token1)
 		.end(function(err, res) {
 			expect(err).to.eql(null);
 			expect(res).to.have.status(200);
-			expect(res.body).to.include({"username":"test2", "firstname":"test", "lastname":"last", "email":"abc@x.com", "location":"ny", "instruments":"example", "bio":"coding"});
+			expect(res.body).to.include({"username":"test2", "firstname":"test", "lastname":"last", "email":"abc@x.com", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"});
 			done();
 		});
 	});
@@ -179,7 +179,7 @@ describe('app testing', function() {
 		.end(function(err, res) {
 			expect(err).to.eql(null);
 			expect(res).to.have.status(200);
-			expect(res.body).to.include({"username":"test3", "firstname":"test", "lastname":"last", "email":"abc@x.com", "location":"ny", "instruments":"example", "bio":"coding"});
+			expect(res.body).to.include({"username":"test3", "firstname":"test", "lastname":"last", "email":"abc@x.com", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"});
 			done();
 		});
 	});
