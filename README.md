@@ -1,5 +1,5 @@
 # bandFinderApp
-An IOS app that helps musicians seeking bands to join
+An iOS app that helps musicians find bands based on genre preferences
 
 Authors:
 Gaye Bulut,
