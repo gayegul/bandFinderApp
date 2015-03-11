@@ -161,7 +161,7 @@ describe('app testing', function() {
 
 	it('should list all approvals', function(done) {
 		chai.request(server)
-		.get('/api/approval')
+		.get('/api/approval/test1')
 		.send({"username":"test1", "firstname":"test1", "lastname":"last", "email":"abc@x.com","password":"test", "location":"ny", "instruments":"example", "bio":"coding", "phone":"2222", "track1":"test", "track2":"test", "track3":"test"})
 		.set('eat', token1)
 		.end(function(err, res) {
@@ -174,7 +174,7 @@ describe('app testing', function() {
 
 	it('should offer an unseen user', function(done) {
 		chai.request(server)
-		.get('/api/unseen_user')
+		.get('/api/unseen_user/test1')
 		.set('eat', token1)
 		.end(function(err, res) {
 			expect(err).to.eql(null);
@@ -184,13 +184,3 @@ describe('app testing', function() {
 		});
 	});
 });
-
-
-
-
-
-
-
-
-
-
