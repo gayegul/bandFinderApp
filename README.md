@@ -12,7 +12,7 @@ Stephen Sherwood
 
 ## Routes:
 
-# Users:
+### Users:
 POST
 /api/user
 Creates a new user.
@@ -30,7 +30,7 @@ Get
 Returns the data for a specified user
 
 
-# Approvals:
+### Approvals:
 Post:
 /api/approval
 Creates an approval between two users(approving and approved user.)
@@ -40,13 +40,13 @@ Get:
 Returns an array of all users approved by the specified username.
 
 
-# Rejections:
+### Rejections:
 Post:
 /api/rejection
 Creates a rejection between two users(rejecting and rejected user.)
 
 Unseen User:
 
-# Get:
+### Get:
 api/unseen_user/:username
 Returns an array of all users that have not yet been rejected or approved by the specifued user.
