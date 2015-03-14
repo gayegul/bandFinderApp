@@ -15,38 +15,54 @@ Stephen Sherwood
 ### Users:
 POST
 /api/user
+
+
 Creates a new user.
 
 Get
 /api/sign_in
+
+
 Returns a new token for a user.
 
 Delete
 /api/user
+
+
 Deletes user.
 
 Get
 /api/user/:username
+
+
 Returns the data for a specified user
 
 
 ### Approvals:
 Post:
 /api/approval
+
+
 Creates an approval between two users(approving and approved user.)
 
 Get:
 /api/approval/:username
+
+
 Returns an array of all users approved by the specified username.
 
 
 ### Rejections:
 Post:
 /api/rejection
+
+
 Creates a rejection between two users(rejecting and rejected user.)
 
-Unseen User:
+### Unseen User:
 
-### Get:
+Get:
 api/unseen_user/:username
+
+
 Returns an array of all users that have not yet been rejected or approved by the specifued user.
